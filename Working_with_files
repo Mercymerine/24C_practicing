@@ -1,0 +1,68 @@
+'''
+f = open('text_files.txt', 'r')
+print(f.name)
+print(f.mode)
+#f.close()
+
+#using context manager for protection closes iles automatically even when it has exceptions
+with open('text_files.txt', 'r') as f:
+    f_contents = f.read(100)
+    print(f_contents, end ='')
+
+    f_contents = f.read(100)
+    print(f_contents, end='')
+print(f.closed)
+#print(f.read())
+'''
+'''
+with open('text_files.txt', 'r') as f:
+    for line in f:
+        print(line, end='')
+'''
+'''
+with open('text_files.txt', 'r') as f:
+    
+    size_to_read = 10
+
+    f_contents = f.read(size_to_read)
+    print(f_contents, end ='')
+
+    f.seek(7)
+
+    f_contents = f.read(size_to_read)
+    print(f_contents, end ='')
+
+    print(f.tell())
+
+
+
+    #while len(f_contents) > 0:
+        #print(f_contents, end ='*')
+        #f_contents = f.read(size_to_read)
+
+'''
+'''
+with open('text_files2.txt', 'w') as f:
+    f.write('Test')
+    f.seek(0)
+    #f.write('Test')
+    f.write('R')
+
+#Read and write for multiple files
+with open('text_files.txt', 'r') as rf:
+    with open ('text_files_copy.txt', 'w') as wf:
+        for line in rf:
+            wf.write(line)
+'''
+#Dealing with image files
+'''
+with open('C:\Users\Mercy Atiz\Desktop', 'rb') as rf:
+    with open('C:\Users\Mercy Atiz\Desktop', 'wb') as wf:
+        for line in rf:
+            wf.write(line)  
+            '''
+with open('analysis.txt', 'w') as wf:
+    wf.write('Number of lines : [18]')
+    wf.write('Number of words : [193]')
+    wf.write('Number of characters : [1125]')
+    wf.write('Most common word : []')          
